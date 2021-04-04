@@ -1,6 +1,4 @@
-// const API_URL = "http://localhost:3000";
-const API_URL = "https://476e5b86b03a.ngrok.io";
-
+const API_URL = "http://localhost:3000";
 const loadingClassName = "qrg-container--loading";
 const $form = document.querySelector(".qrg-form");
 const $input = document.querySelector(".qrg-input");
