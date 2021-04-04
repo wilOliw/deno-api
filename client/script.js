@@ -1,7 +1,7 @@
 // const API_URL = "http://localhost:3000";
 const API_URL = "https://476e5b86b03a.ngrok.io";
 
-const loadingClassName = "qrg-container--loading"
+const loadingClassName = "qrg-container--loading";
 const $form = document.querySelector(".qrg-form");
 const $input = document.querySelector(".qrg-input");
 const qrContainer = () => document.querySelector(".qrg-container");
@@ -15,7 +15,7 @@ function clearQR() {
 }
 
 function toggleLoading(boolean = false) {
-  const method = boolean ? 'add' : 'remove'
+  const method = boolean ? "add" : "remove";
   qrContainer().classList[method](loadingClassName);
 }
 
@@ -23,16 +23,16 @@ const renderQrCode = (base64) => {
   clearQR();
   const img = Object.assign(document.createElement("img"), {
     src: base64,
-    classList: 'qr-code',
-    alt: 'qr-code generator',
-    title: qrValue
-  })
+    classList: "qr-code",
+    alt: "qr-code generator",
+    title: qrValue,
+  });
   qrContainer().appendChild(img);
 };
 
 async function generateQrCode(e) {
   if (e) {
-    e.preventDefault()
+    e.preventDefault();
   }
   if (!qrValue) {
     return;
@@ -46,16 +46,16 @@ async function generateQrCode(e) {
   }
   toggleLoading(false);
 
-  if (confirm('Dowload generated qr-code?')) {
-    Object.assign(document.createElement('a'), {
+  if (confirm("Dowload generated qr-code?")) {
+    Object.assign(document.createElement("a"), {
       href: base64,
-      download: 'download'
+      download: "download",
     }).click();
   }
 }
 
 function inputHandler({ target: { value } }) {
-  qrValue = value?.trim() || '';
+  qrValue = value?.trim() || "";
   if (!qrValue) {
     clearQR();
     return;
