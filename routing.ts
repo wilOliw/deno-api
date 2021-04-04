@@ -5,6 +5,6 @@ import createQR from "./handlers/createQR.ts";
 const router = new Router();
 
 router
-  .get("/to-qr", createQR)
+  .get("/to-qr", createQR);
 
 export default router;

@@ -14,9 +14,18 @@ function clearQR() {
   }
 }
 
-function toggleLoading(boolean = false) {
+function toggleLoading(boolean) {
   const method = boolean ? "add" : "remove";
   qrContainer().classList[method](loadingClassName);
+
+  [".qrg-input", ".qrg-submit"].map((selector) => {
+    const $el = document.querySelector(selector);
+    if (boolean) {
+      $el.setAttribute("disabled", true);
+      return;
+    }
+    $el.hasAttribute("disabled") && $el.removeAttribute("disabled");
+  });
 }
 
 const renderQrCode = (base64) => {
