@@ -8,7 +8,7 @@ import errorMiddleware from "./middlewares/error.ts";
 const app = new Application();
 app.use(
   oakCors({
-    origin: "http://127.0.0.1:5500",
+    origin: "*",
   }),
 );
 
