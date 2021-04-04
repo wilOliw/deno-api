@@ -1,0 +1,157 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:root {
+  --font: Tahoma, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  appearance: none;
+}
+
+body {
+  position: relative;
+  background-color: #fff;
+  --text-color: #fff;
+  --bulb-color: #fff;
+  transition: background-color 250ms ease;
+}
+
+.glass-card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.container {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.qrg-form {
+  --border-radius: 4px;
+  position: relative;
+  padding: 36px;
+  max-width: 256px;
+}
+
+.qrg-control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.qrg-input {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color);
+  background: none;
+  appearance: none;
+  padding: 6px 12px;
+  outline: none;
+  margin: 0 auto;
+  border: none;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+.qrg-input::placeholder {
+  color: var(--text-color);
+}
+
+.qr-code {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qrg-container {
+  width: 256px;
+  height: 256px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.qrg-container--loading:before {
+  --loader-size: 60px;
+  content: "";
+  width: var(--loader-size);
+  height: var(--loader-size);
+  border-radius: var(--loader-size);
+  position: absolute;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 2px solid var(--text-color);
+  border-top-color: transparent;
+  animation: spin 1s infinite linear;
+  box-sizing: border-box;
+}
+
+.qrg-container:empty {
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.qrg-container:empty::after {
+  font-family: var(--font);
+  content: "QR will be here";
+  text-align: center;
+  width: 100%;
+  color: var(--text-color);
+  position: absolute;
+  font-size: 24px;
+  line-height: 36px;
+  top: calc(50% - 18px);
+  text-align: center;
+}
+
+.qrg-container--loading::after {
+  content: none !important;
+}
+
+.qrg-bulb {
+  border: none;
+  width: 52px;
+  height: 52px;
+  padding: 8px;
+  outline: none;
+  border-radius: 26px;
+  cursor: pointer;
+  margin-top: 24px;
+}
+.qrg-bulb svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--bulb-color);
+  transition: fill 250ms ease;
+}
+
+.qrg-submit {
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 40px;
+    width: 40px;
+    border: none;
+    color: var(--text-color);
+}

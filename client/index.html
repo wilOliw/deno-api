@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR-Code Generator</title>
+    <meta name="author" content="hello@plotnikov.dev"/>
+    <meta name="description" content="QR-code generator by p1tnkv"/>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAKnAAB6MgAASlIAAEtCAAB7AAAAAnkAAP/YAACDBQAAUGMAAPy/AAACQAAAel4AAEpSAABK0gAAel4AAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      rel="icon"
+      type="image/x-icon"
+    />
+  </head>
+  <body color-scheme="light">
+    <div class="container">
+      <form class="qrg-form glass-card" onsubmit="generateQrCode(event)">
+        <label class="qrg-control glass-card">
+          <input
+            required
+            placeholder="Input here"
+            type="text"
+            class="qrg-input"
+            tabindex="1"
+            autofocus
+          />
+          <button class="qrg-submit glass-card" tabindex="2">&#9754;</button>
+        </label>
+        <div class="qrg-container glass-card"></div>
+      </form>
+      <button
+        class="qrg-bulb glass-card"
+        tabindex="3"
+        onclick="toggleColorScheme()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          enable-background="new 0 0 512.007 512.007"
+          height="512"
+          viewBox="0 0 512.007 512.007"
+          width="512"
+        >
+          <path
+            d="m383.319 256.923c80.254-103.251 3.556-258.023-127.316-256.917-130.858-1.108-207.579 153.688-127.31 256.918 39.958 52.408 42.313 58.613 42.313 83.081v11.715c-11.641 4.127-20 15.248-20 28.285v10c0 13.037 8.36 24.159 20 28.286v27.715c-13.268.529-13.258 19.476 0 20v6.001c0 22.056 17.944 40 40 40h90.001c22.056 0 39.999-17.944 39.999-40v-6.001h.001c13.268-.529 13.258-19.476 0-20h-.001v-27.715c11.64-4.127 20-15.249 20-28.286v-10c0-13.037-8.36-24.158-20-28.285v-11.715c-.001-24.467 2.354-30.672 42.313-83.082zm-238.722-12.125c-70.211-90.34-3.096-225.761 111.41-224.792 114.493-.972 181.628 134.47 111.407 224.791-39.989 52.45-46.409 63.202-46.409 95.208v10.001h-54.999v-104.428c63.262-40.858 60.592-136.981-4.993-174.229-3.098-1.79-6.917-1.79-10.015 0-65.605 37.264-68.235 133.386-4.993 174.229v104.428h-55v-10.001c.001-32.007-6.419-42.759-46.408-95.207zm111.408-94.793c-5.523 0-10 4.478-10 10v60.202c-38.463-35.111-33.483-99.575 10-128.403 43.493 28.838 48.454 93.3 10 128.403v-60.202c.001-5.523-4.477-10-10-10zm65 322.002c0 11.028-8.972 20-19.999 20h-90.001c-11.028 0-20-8.972-20-20v-6.001h129.999v6.001zm-129.999-26.001v-26.001h129.999v26.001zm149.999-56.001c0 5.514-4.486 10-10 10h-150c-5.514 0-10-4.486-10-10v-10c0-5.514 4.486-9.999 10-9.999h150c5.514 0 10 4.485 10 9.999z"
+          />
+        </svg>
+      </button>
+    </div>
+    <script src="./script.js" defer></script>
+    <script src="./color-scheme.js" defer></script>
+  </body>
+</html>
