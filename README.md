@@ -12,4 +12,4 @@ git clone https://github.com/wilOliw/deno-api.git
 ### server start command
 deno run -A .\index.ts
 
-### Работа с запросами на API можно посмотреть в папке /client
+### Работу с запросами на API можно посмотреть в папке /client
